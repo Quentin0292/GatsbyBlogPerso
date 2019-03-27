@@ -1,7 +1,7 @@
 ---
-title: "Markdown"
-date: "2019-01-03"
-slug: "premier-article"
+slug: premier-article
+date: '2019-01-03'
+title: Markdown c'est le top
 ---
 
 # Article sur Markdown
