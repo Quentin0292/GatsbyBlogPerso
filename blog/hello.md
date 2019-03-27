@@ -3,8 +3,7 @@ slug: premier-article
 date: '2019-01-03'
 title: Markdown c'est le top
 ---
-
-# Article sur Markdown
+# Article sur Markdown et bien d'autre 
 
 A force de rédiger des articles, on fini par utiliser différents traitement de texte. On passe d'options d'autres, chacune avec leurs avantages. Et ne parlons pas du changement entre les applications sur les ordinateurs de bureaux et sur les mobiles. **C'est ici qu'arrive le Markdown**.
 
