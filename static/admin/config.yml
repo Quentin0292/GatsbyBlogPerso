@@ -1,0 +1,19 @@
+backend:
+  name: test-repo
+
+# media_folder => image ou autre à stocker quand on appel le CMS seront stockés ici
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Article
+    folder: blog
+    # laisse la possibilité à une personne tiers de créer des articles
+    create: true
+    fields:
+      - { name: slug, label: Slug }
+      # widget = type
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
