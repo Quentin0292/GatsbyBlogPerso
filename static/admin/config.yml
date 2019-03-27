@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: Quentin0292/GatsbyBlogPerso
 
 # media_folder => image ou autre à stocker quand on appel le CMS seront stockés ici
 media_folder: static/assets
