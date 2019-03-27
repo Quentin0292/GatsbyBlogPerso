@@ -1,5 +1,5 @@
 ---
-title: "Gatsby"
+title: "Débuter avec Gatsby"
 date: "2019-01-03"
 slug: "documentation-gatsby"
 ---

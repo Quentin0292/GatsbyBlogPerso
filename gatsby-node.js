@@ -27,7 +27,10 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     // puis pour chaque posts trouvés, on va createPage par posts
-    posts.forEach(post => {
+    posts.forEach((post, index) => {
+      const prev = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
+
       createPage({
         // adresse URL de la page
         path: post.node.frontmatter.slug,
@@ -35,7 +38,9 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve(`./src/templates/post.js`),
         // donner une information dans la page
         context: {
-          slug: post.node.frontmatter.slug
+          slug: post.node.frontmatter.slug,
+          next,
+          prev
         },
       })
     })

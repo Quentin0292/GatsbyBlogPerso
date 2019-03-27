@@ -4,9 +4,14 @@ import Bio from '../components/bio'
 import SEO from '../components/seo'
 import { graphql, Link } from 'gatsby'
 
-export default ({ data }) => {
+import { Button, Icon, Divider } from "antd"
+
+const ButtonGroup = Button.Group
+
+export default ({ data, pageContext }) => {
   const { title, date } = data.markdownRemark.frontmatter
   const __html = data.markdownRemark.html
+  const { prev, next } = pageContext
   return (
     <Layout>
       <SEO title={title} description={data.markdownRemark.excerpt} />
@@ -14,6 +19,25 @@ export default ({ data }) => {
       <p>{date}</p>
       <div dangerouslySetInnerHTML={{ __html }} />
       <Bio />
+      <Divider />
+      <ButtonGroup>
+        {next && (
+          <Button type="primary" size="large">
+            <Link to={next.frontmatter.slug}>
+              <Icon type="left" />
+              {next.frontmatter.title}
+            </Link>
+          </Button>
+        )}
+        {prev && (
+          <Button type="primary" size="large">
+            <Link to={prev.frontmatter.slug}>
+              {prev.frontmatter.title}
+              <Icon type="right" />
+            </Link>
+          </Button>
+        )}
+      </ButtonGroup>
     </Layout>
   )
 }
